@@ -18,6 +18,31 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 
+import ButtonView from '@ckeditor/ckeditor5-ui/src/button/buttonview.js';
+import Plugin from '@ckeditor/ckeditor5-core/src/plugin.js';
+
+class CustomPlugin extends Plugin {
+	init() {
+		const editor = this.editor;
+
+		editor.ui.componentFactory.add('templatePreview', locale => {
+			const view = new ButtonView(locale);
+
+			view.set({
+				label: 'Template Preview',
+				icon: '<i class="fa-solid fa-database"></i>',
+				tooltip: true,
+			});
+
+			view.on('execute', () => {
+				console.log('hello');
+			});
+
+			return view;
+		});
+	}
+}
+
 class Editor extends ClassicEditor { }
 
 // Plugins to include in the build.
@@ -35,7 +60,8 @@ Editor.builtinPlugins = [
 	List,
 	Paragraph,
 	Table,
-	Underline
+	Underline,
+	CustomPlugin
 ];
 
 // Editor configuration.
@@ -61,7 +87,8 @@ Editor.defaultConfig = {
 			'|',
 			'insertTable',
 			'undo',
-			'redo'
+			'redo',
+			'templatePreview'
 		]
 	},
 	language: 'en'
