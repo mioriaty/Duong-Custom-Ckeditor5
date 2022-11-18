@@ -19,6 +19,7 @@
     "@ckeditor/ckeditor5-paragraph": "^35.1.0",
     "@ckeditor/ckeditor5-table": "^35.1.0",
     "@ckeditor/ckeditor5-theme-lark": "^35.1.0",
+    "@ckeditor/ckeditor5-ui": "^35.1.0",
     "css-loader": "^5.2.7",
     "postcss": "^8.4.16",
     "postcss-loader": "^4.3.0",
