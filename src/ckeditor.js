@@ -30,7 +30,11 @@ class CustomPlugin extends Plugin {
 
 			view.set({
 				label: 'Template Preview',
-				icon: '<i class="fa-solid fa-database"></i>',
+				icon: `<svg width="550" height="550" viewBox="0 0 550 550" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<rect width="550" height="550" rx="60" fill="#F2E2D9"/>
+				<text fill="#C67D53" xml:space="preserve" style="white-space: pre" font-family="Roboto" font-size="115" font-weight="500" letter-spacing="-0.05em"><tspan x="56" y="313.807">Polarized</tspan></text>
+				</svg>
+				`,
 				tooltip: true,
 			});
 
